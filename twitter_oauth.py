@@ -86,6 +86,11 @@ r = oauth.get(protected_url)
 print (r.text)
 
 protected_url = 'https://api.twitter.com/1.1/search/tweets.json'
-params = {'q':'food'}
+params = {}
+params["q"] = "Muskegon"
+
 r = oauth.get(protected_url, params=params)
-print (r.text)
+# for i in r.text["statuses"]:
+# 	print(i["text"])
+# 	print("xxxxxxxxxxx")
+print (r.text["statuses"])
